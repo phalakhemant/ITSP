@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content = "height = device-height, width = 420, user-scalable = no" /> 
+        <title>WebIOPi | Demo</title>
+        <script type="text/javascript" src="/webiopi.js"></script>
+        <script type="text/javascript">
+        webiopi().ready(function() {
+                var content, button;
+                content = $("#content");
+                        
+                // create a "SWITCH" labeled button for GPIO 0
+                button = webiopi().createGPIOButton(23, "OPENLOCK");
+                content.append(button); // append button to content div
+                               
+                // create a "LED" labeled button for GPIO 7
+                button = webiopi().createGPIOButton(24, "CLOSELOCK");
+                content.append(button); // append button to content div
+                
+                button = webiopi().createGPIOButton(25, "SWITCH");
+                content.append(button); // append button to content div   
+                
+                button = webiopi().createGPIOButton(17, "OPENDOOR");
+                content.append(button); // append button to content div
+                               
+                // create a "LED" labeled button for GPIO 7
+                button = webiopi().createGPIOButton(27, "CLOSEDOOR");
+                content.append(button); // append button to content div
+                
+                button = webiopi().createGPIOButton(22, "SWITCHFORDOOR");
+                content.append(button); // append button to content div 
+              
+        });
+                
+        
+        
+        </script>
+        <style type="text/css">
+                button {
+                        display: block;
+                        margin: 5px 5px 5px 5px;
+                        width: 160px;
+                        height: 45px;
+                        font-size: 24pt;
+                        font-weight: bold;
+                        color: black;
+                }
+                
+                input[type="range"] {
+                        display: block;
+                        width: 160px;
+                        height: 45px;
+                }
+                
+                #gpio23.LOW {
+                        background-color: White;
+                }
+                
+                #gpio23.HIGH {
+                        background-color: Red;
+                }
+                #gpio24.LOW {
+                        background-color: White;
+                }
+                
+                #gpio24.HIGH {
+                        background-color: Red;
+                }
+                #gpio25.LOW {
+                        background-color: White;
+                }
+                
+                #gpio25.HIGH {
+                        background-color: Red;
+                }
+                #gpio17.LOW {
+                        background-color: White;
+                }
+                
+                #gpio17.HIGH {
+                        background-color: Red;
+                }
+                #gpio27.LOW {
+                        background-color: White;
+                }
+                
+                #gpio27.HIGH {
+                        background-color: Red;
+                }
+                #gpio22.LOW {
+                        background-color: White;
+                }
+                
+                #gpio22.HIGH {
+                        background-color: Red;
+                }
+                
+                
+        </style>
+</head>
+<body>
+        <div id="content" align="center"></div>
+</body>
+</html>
